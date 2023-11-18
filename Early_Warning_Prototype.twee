@@ -1,0 +1,495 @@
+:: StoryTitle
+Early_Warning_Prototype
+
+
+:: StoryData
+{
+  "ifid": "05F2E460-13FC-4F0B-9329-16AC0AFE01D6",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Dream-Background",
+  "zoom": 1
+}
+
+
+:: Breakfast {"position":"1500,1000","size":"100,100"}
+(if: $makeBreakfast is false)[
+(set: $Time to $Time - 30)
+Paul roams around the kitchen quickly 
+
+(text-colour:orange)[Nothing like the sizzle of eggs in the morning to start the day right.]
+
+He quickly scorfs down the breakfast while reading the Marin Examiner.
+
+The front headline reads.
+
+
+(text-colour:black)+(bg:(gradient: 5, 0,#ffffff,0.0593,#ffffff,0.9877,#000000))[Record High Heat Brings Concern Over Fires]
+
+
+Paul Scoffs to himself
+
+(text-colour:orange)[They've even got the media convinced]
+(set: $makeBreakfast to true)
+]
+
+(if: $goBag is false)[
+(text-colour:orange)[I hate that smell, maybe I should make a  (text-colour:lime)[[go bag]] just in case I have to leave(30 minutes)]
+]
+(text-colour:orange)[Go back (text-colour:lime)[[downstairs]]]
+
+REMAINING TIME: $Time
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+
+
+:: Dream-Background {"position":"800,200","size":"100,100"}
+Not many folks around here can boast a life lived like Paul's. A retired army engineer, he's seen his share of the world, molded by the rigors of service and solitude. His home? Well, it's been just him for quite a stretch of years now.
+
+Mary... his better half, she passed on a lifetime ago, leaving Paul to his own devices. But Paul had endured. You see, the army taught him more than just a dresscode and following orders. He's got a knack for fixing things, a real all-in-one handyman.
+
+He ain't the type to brag, well, not too much anyway. There's a bit of an ego there, sure, but who could blame him? He's earned his stripes.
+
+Paul's neighbors get past it though. They're his company, his connection to a world that seems smaller since his family's visits grew fewer and farther between. He cherishes these little moments, these brief exchanges.
+
+That's Paul for you, a solitary man with a lifetime of skills and stories, standing strong in the quiet of his own space, with the world just a porch-step away.
+
+[[Faint mumbling wakes Paul from his slumber]]
+
+
+:: EndofPreFire {"position":"800,1300","size":"100,100"}
+With the day exahusted, Paul cleans the kitchen and lies down... slowly falling asleep to the light hum of the tv as he always does.
+
+Paul Snores deeply
+
+(if: $talkToNeighbor is true)[
+[[Paul is awoken suddenly]] by a loud knock on the front door. He looks at his clock to realize its 2 in the morning
+]
+
+(if: $talkToNeighbor is false)[
+half asleep [[Paul wakes to the faint smell of smoke]] and sees its 4 in the morning
+]
+
+
+:: Faint mumbling wakes Paul from his slumber {"position":"1100,200","size":"100,100"}
+Paul gets up seeing the chatter is coming from the TV.
+
+The TV blares
+
+(text-colour:white)+(bg:navy)[In other news, residents of Marin County should be warned. With the summer heat reaching its peak, we are now on high alert for potential fires. Please stay vigilant and ensure your homes and properties are safeguarded. Again, there is no fire folks, however we here atr Channel 10 want to make sure we are doing our part to complete the county we love safe.
+
+And that's gonna wrap up our Great Morning America show! I'm Mitch Tucker and have a spectacular day Marin County]
+
+Paul, groggy and disoriented, rubs his eyes and sits up, his gaze shifting from the TV to a [[framed photograph on the bedside table.]]
+
+
+
+
+
+:: I think I see Aldo outside maybe I should check in with him {"position":"1100,1000","size":"100,100"}
+Paul goes over to talk to Aldo
+
+(text-colour:blue)[Paul The fire is looking really bad. If you want to comne with us when the evacuation alert goes out, which it will. please let us know its no issue at all.]
+
+(text-colour:orange)[Thank you Aldo but I don't think that will be necessary. I'll let you know.]
+
+(if: $ignitableLawn is false )[
+(text-colour:orange)[The grass looks pretty dead, I should probably (text-colour:green)[[mow it down->The lawn looks pretty yellow I should cut it down]]]]
+
+Go back to (text-colour:green)[[The Frontyard]]
+(set: $talkToNeighbor to true)
+(set: $Time to $Time - 30)
+REMAINING TIME: $Time
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+:: I'm going back to bed Aldo. Goodnight {"position":"900,1700","size":"100,100"}
+After seeing Aldo out he watches his car speed away into the night.
+
+(text-colour:orange)[They must reallty think that fire is coming]
+
+Paul slowly moves back up the stairs settling back into his warm bed before immediately falling back(text-colour:green)[[ asleep.->Paul wakes to the faint smell of smoke]]
+
+
+:: It's probably nothing but just in case I'll come with you guys {"position":"1100,1500","size":"100,100"}
+Paul relcutantly agrees to evacuate with Aldo and his wife Jasmine. 
+
+(if: $goBag is true)[
+Before leaving the house he grabs the go bag he prepared earlier. 
+
+(text-colour:orange)[Being proactive paid off for once didnt it mary]
+
+he says as he runs downstairs]
+
+Paul follows Aldo out to his car where his wife, Jasmine, is waiting.
+
+They drive out of the city, the smoke growing and glow of the fire rising as they(text-colour:green)[ [[leave town, listening to the radio for where to go]]]
+
+
+:: Its Time to leave {"position":"600,1900","size":"100,100"}
+The moment Paul enevr thought would come is finally here and Paul begisn tog row anxious, but he knows what to do
+
+(if: $goBag is true)[
+He quickly grabs the Go Bag he made earlier and turns ont he handeheld radio in the bag which is now filled with alerts saying to evacuate and leave the city
+]
+
+In the few minutes that had gone by, he could now see the flames closing in on the outer perimeter of his large property. 
+
+Paul chooses whether he tries to evacuate through (text-colour:green)[[The backyard]]
+or (text-colour:lime)[[The frontyard]]
+
+
+:: Paul is awoken suddenly {"position":"900,1500","size":"100,100"}
+Dazed and confused, he goes downstairs to see Aldo at the door.
+
+(text-colour:navy)[Paul Marin is on fire! We have to leave. Now. We have space in the car if you want to come, go grab your stuff]
+
+Paul still half-asleep thinks to himself.
+
+(text-colour:orange)[This is all some BS they ahd the fire contained when I went to sleep its not worth the hassle.]
+
+(text-colour:orange)[[It's probably nothing but just in case I'll come with you guys]]
+
+or
+
+(text-colour:orange)[[I'm going back to bed Aldo. Goodnight]]
+
+
+:: Paul wakes to the faint smell of smoke {"position":"600,1700","size":"100,100"}
+Paul begins to cough and is awoken. The smell of smoke permeates the air heavily.
+
+He looks outside to see a faint orange glow in the distance. 
+
+The fire is coming.
+
+Solemnly Paul knows that finally
+
+(text-colour:orange)[[Its Time to leave]]
+
+
+:: Roof has a large overgrown branch connected to the house {"position":"500,1000","size":"100,100"}
+Paul carefuly climbs to the roof and begins sawing different parts of the tree causing branches to fall. 
+
+(text-colour:orange)[I don't think I've been up here since we moved in]
+
+Once finished, he collects the branches placing them in his yard-waste dedicated bin.
+
+(if: $cleanGutter is false)[
+Once down, he notices the gutter overfilling with leaves. 
+
+(text-colour:orange)[Maybe I should] (text-colour:green)[[clean those out->the gutter is filled with leaves]](text-colour:orange)[ since I'm already here.]
+]
+
+Go back to (text-colour:green)[[The Backyard]]
+(set: $treeTrim to true)
+(set: $Time to $Time - 30)
+REMAINING TIME: $Time
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+:: The Backyard {"position":"700,800","size":"100,100"}
+The backyard is relatively big. 
+
+Paul had a pool installed when he and Mary first moved in. 
+
+(text-colour:orange)[I really should stop servicing this money hole at this point]
+
+(if:$treeTrim is false)[
+The (text-colour:lime)[[Roof has a large overgrown branch connected to the house]], (text-colour:orange)[maybe it should get cut?] - Paul thinks to himself
+]
+
+(if: $cleanGutter is false)[
+Paul looks up and notices (text-colour:green)[[the gutter is filled with leaves]] and dry material that fell off the tree]
+
+
+
+Go Back to the (text-colour:green)[[yard]]
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+REMAINING TIME: $Time
+
+
+:: The Frontyard {"position":"1100,800","size":"100,100"}
+Paul's frontyard is wide and large.  A white picket fence surrounds his large front lawn which has turned yellow since Mary died. 
+
+(if: $ignitableLawn is false)[
+[[The lawn looks pretty yellow I should cut it down]]
+
+]
+
+(if: $talkToNeighbor is false)[
+[[I think I see Aldo outside maybe I should check in with him]]
+
+]
+
+Go Back to the (text-colour:green)[[yard]]
+
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+REMAINING TIME: $Time
+
+
+:: The backyard {"position":"400,2100","size":"100,100"}
+The backyard is covered in smoke now.
+
+
+(if: $treeTrim is true)[
+(if: $ignitableLawn is true)[
+It seems Paul's due dillegence is the only thing that saved his house from decimation. 
+
+Throughthe smoke he can make out the back gate next to the yard waste bins he took care of earlier.
+
+Paul carefully makes his way out the back gate and onto (text-colour:green)[[the road out->looking for help]] of his property
+]
+]
+
+(else-if: $cleanGutter is true)[
+Although Paul cleaned out the gutter, the tree branch connected top his house ignited the main roof of his property, (text-colour:lime)[[there's no way out]]
+
+]
+
+(else-if: $treeTrim is true)[
+Although Paul cut the tree, the ignitable material in the gutter caught fire. The side of paul's house has no cauight fire... (text-colour:green)[[there's no way out]]
+
+]
+
+Paul could also check (text-color::green)[[The frontyard]] if he hasn't already
+
+
+:: The frontyard {"position":"700,2100","size":"100,100"}
+(if: $ignitableLawn is true)[
+Paul's due dillegence in cutting the lawn has paid offf and through the smoke he sees a small path through the middle of the yard to the main road - An escape route. 
+
+He quickly shuffles through the yard and runs onto the main road(text-colour:green)[[looking for help]]
+]
+(else:)[
+Paul's yellowed front lawn quickly ignites when the fire reaches the outside of his property. 
+
+The front yard is engulfed in flames and he will not be able to get out. He quickly checks (text-colour:lime)[[The backyard]]
+]
+
+
+:: The lawn looks pretty yellow I should cut it down {"position":"900,1000","size":"100,100"}
+Paul quickly mows the yellowed lawn down and sweeps the clippings up. 
+
+(text-colour:orange)[I always hated lookin g at that yellow mess anyways]
+
+Maintaining a well-trimmed lawn is crucial for wildfire protection as it reduces the amount of readily combustible material, creating a natural firebreak that can slow or stop the spread of wildfires near your home.
+
+(if: $talkToNeighbor is false)[
+(text-colour:orange)[I think I see Aldo, maybe I should (text-colour:green)[[check in with him->I think I see Aldo outside maybe I should check in with him]] sounds great]]
+
+Go back to (text-colour:green)[[The Frontyard]]
+(set: $ignitableLawn to true)
+(set: $Time to $Time - 30)
+REMAINING TIME: $Time
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+:: civic center. {"position":"400,2700","size":"100,100"}
+There they recieve food, water and more medical attention.
+
+Paul sees Aldo and Jasmine and thinks how he should have left with them but he is happy to be alive.
+
+(text-colour:purple)[The ENd]
+
+
+:: downstairs {"position":"1300,800","size":"100,100"}
+Paul’s mind is a battleground of practicality and skepticism as he stands in the heart of his home. The fire warning still rings in his ears, but so does the rumble of his empty stomach.
+
+
+ (text-colour:orange)[Maybe they're right. Maybe I should take some precautions... but I can't help thinking it’s just a lot of fuss over nothing.]
+  
+(if: $makeBreakfast is false)[
+(text-colour:orange)[ (text-colour:lime)[[Breakfast]](30 minutes) does sound good right about now. A hearty meal to start the day.]]
+
+(if: $goBag is false)[
+(text-colour:orange)[Or... should I prepare my  (text-colour:lime)[[go bag]](30 minutes) Just in case the smoke decides to pay a visit. Mary always said better safe than sorry.]]
+
+(text-color:orange)[ I could always check around the (text-colour:lime)[[yard]]]
+
+REMAINING TIME: $Time
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+:: framed photograph on the bedside table. {"position":"1100,400","size":"100,100"}
+(text-colour:orange)[A fire warning? Over a bit of heat?]
+
+Paul chuckles softly shaking his head as he looks at a picture of Mary on his nightstand.
+
+(text-colour:orange)[Things have really changed... Haven’t they, Mary?..."]
+
+(text-colour:orange)[But we'll be fine. Just like we always are]
+
+Despite his reassuring words, there’s a hint of concern in Paul's eyes, a glimmer of uncertainty. Maybe it’s time to [[make sure everything’s in order.]]
+
+
+
+:: go bag {"position":"1300,1000","size":"100,100"}
+(if: $goBag is false)[
+Paul goes around his home collecting everything he might need to leave when a fire starts(radio, photo memories, medical supplies, flashlight, etc.)
+
+As he sets the photo of Mary Inside
+
+(text-colour:orange)[We'll be fine darling]
+(set: $Time to $Time - 30)
+]
+
+(set: $goBag to true)
+
+(if: $makeBreakfast is false)[
+(text-colour:orange)[I'm still pretty hungry. (text-colour:green)[[Eggs and Bacon->Breakfast]] sounds great]]
+
+(else:)[
+(text-colour:orange)[I should clean up and go (text-colour:lime)[[out->downstairs]].  This fire doesn't seem to be getting any closer though ]
+]
+
+REMAINING TIME: $Time
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+:: head there immediately. {"position":"1500,1500","size":"100,100"}
+The car pulls into the crowded parking lot of the high school. Volunteers and emergency personnel are bustling about, guiding new arrivals.
+
+Amidst the chaos and uncertainty, the high school stands as a beacon of safety. It’s a surreal feeling for Paul, seeing his community come together in such dire times
+
+The trio unloads their car and heads towards the entrance, where they are greeted by volunteers.
+
+Volunteer: “Welcome, we’re here to help. Let’s get you settled in.”
+
+They settle in and learn the severity of the fire and discuss with fire marshalls about how to move forward 
+
+(text-colour:white)+(bg:purple)[THE END]
+
+
+:: leave town, listening to the radio for where to go {"position":"1300,1500","size":"100,100"}
+(bg:navy)[Radio Announcer: ...urgent evacuation to the local high school, which has been set up as a temporary shelter. All residents in the affected areas are advised to [[head there immediately.]]]
+
+
+Aldo: “We’re doing the right thing. The high school is not far, we’ll be safe there.”
+
+Paul: [Nods] “Yeah, better safe than sorry. And we’ve got each other, that’s what matters.”
+
+Jasmine: “I just can’t believe this is happening...”
+
+
+:: looking for help {"position":"700,2300","size":"100,100"}
+Once on the main road he can hear the close sound of sirens and continues to quickly (text-colour:lime)[[move in that direction.]]
+
+
+
+
+:: make sure everything’s in order. {"position":"1100,600","size":"100,100"}
+(text-colour:orange)[Should I even bother checking up on this? It's probably nothing, just like the last time.]
+
+(text-colour:orange)[I guess I could check the (text-colour:green) [[yard]] since its been awhile]
+
+(text-colour:orange)[but I'm also really hungry and should check (text-colour:green) [[downstairs]]]
+
+
+There's only so much time in the day - Your actions will have consequences.
+
+You have 2 hours.
+(set: $Time to 120)
+REMAINING TIME: $Time
+(set: $makeBreakfast to false)
+(set: $talkToNeighbor to false)
+(set: $cleanGutter to false)
+(set: $ignitableLawn to false)
+(set: $treeTrim to false)
+(set: $goBag to false)
+
+
+
+
+:: move in that direction. {"position":"900,2300","size":"100,100"}
+Paul finally reaches the source of the noise and is greeted by fire and medical personel stationed in a grocery store parking lot.
+
+(text-colour:red)[Are you okay? Are you in need of assistance?]
+
+The parking lot is pandamonium but the nice demeanor makes Paul feel relaxed.
+
+The firefighters get Paul some water and sit him down with others who evacuated. 
+
+They wait there for a few hours before fire marshalls help usher them onto busses to be taken to local high schools where they will sleep for the time being.
+
+Paul is happy to be safe.
+
+(text-colour:purple)[The End]
+
+
+:: street behind his backyard. {"position":"400,2500","size":"100,100"}
+Suddenly, he begins feeling a mist of water. 
+
+The fire crew is on a ladder above his house fighting to extinguish it. Multiple firefighters rush Paul's backyard yelling
+
+(text-colour:red)[Do you need help?! are you okay?!]
+
+They quickly help Paul out and give him to the paramedics to ceck if he's okay from smoke inhilationa and shock. They then load Paul up with other survivors from his neigborhood onto a bus to take them to the (text-colour:green)[[civic center.]]
+
+
+:: the gutter is filled with leaves {"position":"700,1000","size":"100,100"}
+Paul quickly scoops several handfuls of leaves out of the gutter and into the plant waste bin below.
+
+(text-colour:orange)[No wonder the gutter had been flooding last winter]
+
+By the time he's done, the waste bin is filled to the bri,
+
+(if: $treeTrim is false)[
+Finished, he notices the large branch from his tree is hitting his house.
+
+(text-colour:orange)[I really should] [[trim that tree->Roof has a large overgrown branch connected to the house]] (text-colour:orange)[before it gets any larger]
+]
+
+Go back to (text-colour:green)[[The Backyard]]
+(set: $cleanGutter to true)
+(set: $Time to $Time - 30)
+REMAINING TIME: $Time
+
+(if: $Time is 0)[
+(text-colour:green)[[Time's Up->EndofPreFire]]
+]
+
+
+:: there's no way out {"position":"400,2300","size":"100,100"}
+With no way out Paul decides the safest option is to get in the pool where he knows he will not be harmed by the flames. 
+
+He gets in and takes his sock off and wets it with water to cover his mouth when breathing to reduce the smoke inhilation. Back from the pool he watches solemnly as the fire begins to light his house on fire. 
+
+It seems like time passes slowly but after half an hour or so he begisn to hear sirens from the (text-colour:green)[[street behind his backyard.]]
+
+
+:: yard {"position":"900,700","size":"100,100"}
+Paul's yard is huge with a fence surrounding his house abut 500ft. out. His yard is split into two main sections.
+
+(text-colour:lime)[[The Backyard]] has the pool and a big oak tree. I should porbably make sure nothing is ignitable
+
+(text-colour:lime)[[The Frontyard]] has a spawning grassy lawn. it's gone yellow since mary passed. It also looks like James the neighbor is out-front. I could go check that out too.
+
+I could also go (text-colour:lime)[[back inside->downstairs]]
+
+REMAINING TIME: $Time
